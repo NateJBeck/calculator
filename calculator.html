@@ -1,63 +1,24 @@
 <!DOCTYPE html>
-
 <html>
   <head>
     <title>Calculator</title>
-    <script>
-      // Ruby: say_hello_to_user
-      //   JS: sayHelloToUser
-
-      // function sayGoodbye(message){
-      //   console.log(message);
-      //   return false;
-      // }
-
-      function calculate(){
-        var leftValue = document.getElementById("left").value
-          console.log(leftValue);
-          return false;
-      }
-
-      // Number("1") + Number("5") = 6
-
-      function summation(){
-        var leftValue = Number(document.getElementById("left").value);
-        var rightValue = Number(document.getElementById("right").value);
-
-        var operator = document.getElementById("operator").value;
-        var resultElement = document.getElementById("result");
-
-        if( operator === "+" ){
-          var result = leftValue + rightValue;
-        } else if( operator === "-" ){
-          var result = leftValue - rightValue;
-        } else if( operator === "x" ){
-          var result = leftValue * rightValue;
-        } else if( operator === "/" ){
-          var result = leftValue / rightValue;
-        } else if( operator === "^" ){
-          var result = Math.pow(leftValue, rightValue)
-        }
-        else {
-          var result = "No can do dude"
-        }
-
-        resultElement.innerText = result
-
-        //console.log(sumValue);
-        return false;
-      }
-
-    </script>
+    <script src="http://code.jquery.com/jquery-2.1.1.js"></script>
+    <script src="./calculator_jquery.js"></script>
   </head>
+
+  <style>
+    body {
+      background-color: bisque;
+    }
+  </style>
 
   <body>
     <h1 id="header">Calculator</h1>
     <p id="result">No calculation yet.</p>
 
-    <form onsubmit="return summation()">
+    <form id="theForm">
       <input type="number" id="left" />
-      <input type="text" id="operator" />
+      <input type="text"   id="operator" />
       <input type="number" id="right" />
       <input type="submit" />
     </form>
