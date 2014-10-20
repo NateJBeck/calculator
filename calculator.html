@@ -29,7 +29,16 @@
 
         if( operator === "+" ){
           var result = leftValue + rightValue;
-        } else {
+        } else if( operator === "-" ){
+          var result = leftValue - rightValue;
+        } else if( operator === "x" ){
+          var result = leftValue * rightValue;
+        } else if( operator === "/" ){
+          var result = leftValue / rightValue;
+        } else if( operator === "^" ){
+          var result = Math.pow(leftValue, rightValue)
+        }
+        else {
           var result = "No can do dude"
         }
 
