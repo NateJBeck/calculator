@@ -1,15 +1,57 @@
 <!DOCTYPE html>
+
 <html>
   <head>
     <title>Calculator</title>
+    <script>
+      // Ruby: say_hello_to_user
+      //   JS: sayHelloToUser
+
+      // function sayGoodbye(message){
+      //   console.log(message);
+      //   return false;
+      // }
+
+      function calculate(){
+        var leftValue = document.getElementById("left").value
+          console.log(leftValue);
+          return false;
+      }
+
+      // Number("1") + Number("5") = 6
+
+      function summation(){
+        var leftValue = Number(document.getElementById("left").value);
+        var rightValue = Number(document.getElementById("right").value);
+
+        var operator = document.getElementById("operator").value;
+        var resultElement = document.getElementById("result");
+
+        if( operator === "+" ){
+          var result = leftValue + rightValue;
+        } else {
+          var result = "No can do dude"
+        }
+
+        resultElement.innerText = result
+
+        //console.log(sumValue);
+        return false;
+      }
+
+    </script>
+  </head>
+
   <body>
-    <h1>Calculator</h1>
-    <form>
-      <input type="number" />
-      <input type="text" />
-      <input type="number" />
+    <h1 id="header">Calculator</h1>
+    <p id="result">No calculation yet.</p>
+
+    <form onsubmit="return summation()">
+      <input type="number" id="left" />
+      <input type="text" id="operator" />
+      <input type="number" id="right" />
       <input type="submit" />
     </form>
   </body>
-  </head>
+
 </html>
